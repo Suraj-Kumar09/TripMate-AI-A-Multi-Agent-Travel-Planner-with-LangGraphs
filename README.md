@@ -73,8 +73,8 @@ DEFAULT_ORIGIN_IATA=DAC
 ## Installation
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+conda create -n travel python=3.11 -y
+conda activate travel
 pip install -r requirements.txt
 ```
 
