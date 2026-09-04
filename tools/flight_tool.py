@@ -15,7 +15,7 @@ API_KEY = os.getenv("AVIATIONSTACK_API_KEY")
 
 # Default origin when user says only destination, e.g. "Japan trip"
 # Change this if your default location is not Bangladesh/Dhaka.
-DEFAULT_ORIGIN_IATA = os.getenv("DEFAULT_ORIGIN_IATA", "DAC")
+DEFAULT_ORIGIN_IATA = os.getenv("DEFAULT_ORIGIN_IATA", "Delhi")
 
 
 BASE_URL = "https://api.aviationstack.com/v1/flights"
@@ -24,7 +24,7 @@ BASE_URL = "https://api.aviationstack.com/v1/flights"
 AIRPORTS = airportsdata.load("IATA")
 
 
-
+# Country aliases for common names and abbreviations (Country Short Names)
 COUNTRY_ALIASES = {
     "usa": "US",
     "u.s.a": "US",
@@ -64,7 +64,6 @@ COUNTRY_ALIASES = {
 
 # Preferred main airport for country-level search
 COUNTRY_MAIN_AIRPORT = {
-    "BD": "DAC",
     "IN": "DEL",
     "JP": "NRT",
     "US": "JFK",
@@ -92,7 +91,6 @@ COUNTRY_MAIN_AIRPORT = {
 
 
 CITY_MAIN_AIRPORT = {
-    "dhaka": "DAC",
     "delhi": "DEL",
     "new delhi": "DEL",
     "mumbai": "BOM",
@@ -221,11 +219,11 @@ def resolve_location_to_iata(location: str):
     Converts country/city/airport/IATA into IATA code.
 
     Examples:
-    Bangladesh -> DAC
+    Bangladesh -> Delhi
     Japan -> NRT
-    Dhaka -> DAC
+    Dhaka -> Delhi
     Tokyo -> NRT
-    DAC -> DAC
+    Delhi -> Delhi
     """
 
     if not location:
@@ -327,8 +325,8 @@ def parse_route(query: str):
 
     Can return:
     None, None  -> global live flights
-    DAC, NRT    -> filtered route
-    DAC, None   -> all flights from DAC
+    Delhi, NRT    -> filtered route
+    Delhi, None   -> all flights from Delhi
     None, NRT   -> all flights to NRT
     """
 
@@ -350,7 +348,7 @@ def parse_route(query: str):
     if any(keyword in q_lower for keyword in global_keywords):
         return None, None
 
-    # Direct IATA code route: DAC to NRT
+    # Direct IATA code route: Delhi to NRT
     codes = re.findall(r"\b[A-Z]{3}\b", q)
 
     if len(codes) >= 2:
