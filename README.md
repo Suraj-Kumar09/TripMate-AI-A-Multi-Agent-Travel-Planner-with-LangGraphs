@@ -1,3 +1,9 @@
+Yes. Your previous version had **extra escaping (`\`)** around Markdown syntax, which is why GitHub was showing the raw Markdown incorrectly.
+
+Use this **corrected `README.md`** directly. The Markdown syntax below is normal GitHub Markdown—no unnecessary `\` characters.
+
+[📄 Download the corrected README.md](sandbox:/mnt/data/README.md)
+
 ````markdown
 # ✈️ TripMate AI
 
@@ -129,14 +135,14 @@ Markdown is rendered using **Marked.js** and PDF generation is handled using **h
           ┌──────────────────┐             ┌──────────────────┐
           │   Flight Agent   │             │    Hotel Agent   │
           │                  │             │                  │
-          │  AviationStack  │             │  Tavily Search   │
+          │  AviationStack   │             │  Tavily Search   │
           └────────┬─────────┘             └────────┬─────────┘
-                   │                                 │
-                   └────────────────┬────────────────┘
+                   │                                │
+                   └────────────────┬───────────────┘
                                     │
                                     ▼
                          ┌─────────────────────┐
-                         │  Itinerary Agent    │
+                         │   Itinerary Agent   │
                          │                     │
                          │      Groq LLM       │
                          └──────────┬──────────┘
@@ -443,6 +449,8 @@ DEFAULT_ORIGIN_IATA=DAC
 
 > Never commit `.env` to GitHub.
 
+Add `.env` to `.gitignore`.
+
 ---
 
 # 🛠️ Installation
@@ -475,13 +483,7 @@ pip install -r requirements.txt
 
 ## 4. Configure Environment Variables
 
-Create:
-
-```text
-.env
-```
-
-and add the required API keys and database configuration.
+Create a `.env` file and add the required API keys and database configuration.
 
 ---
 
