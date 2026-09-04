@@ -1,10 +1,3 @@
-Yes. Your previous version had **extra escaping (`\`)** around Markdown syntax, which is why GitHub was showing the raw Markdown incorrectly.
-
-Use this **corrected `README.md`** directly. The Markdown syntax below is normal GitHub Markdown—no unnecessary `\` characters.
-
-[📄 Download the corrected README.md](sandbox:/mnt/data/README.md)
-
-````markdown
 # ✈️ TripMate AI
 
 ### Multi-Agent AI Travel Planner with LangGraph, Groq, Tavily, AviationStack & PostgreSQL
@@ -20,6 +13,19 @@ Use this **corrected `README.md`** directly. The Markdown syntax below is normal
 [![Tavily](https://img.shields.io/badge/Tavily-Web%20Search-black.svg)](https://tavily.com/)
 [![AviationStack](https://img.shields.io/badge/AviationStack-Flight%20Data-red.svg)](https://aviationstack.com/)
 
+---
+
+## 📌 Overview
+
+**TripMate AI** is an end-to-end **Multi-Agent AI Travel Planner** designed to automate the travel-planning process.
+
+Instead of manually searching across multiple websites for flights, hotels, sightseeing options, and itinerary ideas, users can simply describe their requirements in natural language.
+
+### Example
+
+```text
+Plan a complete 7 days USA trip from India including flights,
+hotels and sightseeing under ₹2 lakhs.
 ---
 
 ## 📌 Overview
